@@ -28,12 +28,12 @@ public struct Dependency {
             self.init { _ in resolver() }
         }
         
-        func named(_ name: DependencyName) -> Provide {
+        public func named(_ name: DependencyName) -> Provide {
             self.name = name
             return self
         }
         
-        func mode(_ mode: Dependency.Mode) -> Provide {
+        public func mode(_ mode: Dependency.Mode) -> Provide {
             self.mode = mode
             return self
         }
