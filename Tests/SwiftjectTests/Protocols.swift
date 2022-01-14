@@ -5,6 +5,8 @@
 //  Created by Alexander Kaverin on 25.04.2021.
 //
 
+import Foundation
+
 protocol RESTClient {
     func getModel() -> Model
 }

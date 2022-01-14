@@ -10,9 +10,9 @@ import SwiftUI
 
 
 @available(iOS 13, *)
-@propertyWrapper public struct InjectObserved<T>: DynamicProperty where T: ObservableObject {
+@propertyWrapper public struct InjectStateObject<T>: DynamicProperty where T: ObservableObject {
  
-    @ObservedObject private var dependency: T
+    private var dependency: T
     
     public var wrappedValue: T {
         get { return dependency }
@@ -20,7 +20,7 @@ import SwiftUI
     }
     
     public var projectedValue: ObservedObject<T>.Wrapper {
-        return self.$dependency
+        return StateObject(wrappedValue: dependency).projectedValue
     }
     
     public init() {

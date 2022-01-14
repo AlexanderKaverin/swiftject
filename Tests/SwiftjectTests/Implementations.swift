@@ -7,6 +7,7 @@
 
 import Foundation
 import Swiftject
+import SwiftUI
 
 enum ModelSource {
     case remote
@@ -69,4 +70,8 @@ class MockMainViewModel: MainViewModel {
     func getModel() -> Model {
         Model(string: "mock model", source: .mock)
     }
+}
+
+class TestView {
+    @InjectStateObject private var viewModel: ViewModel
 }
