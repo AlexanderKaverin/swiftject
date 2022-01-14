@@ -18,6 +18,8 @@ final class SwiftjectTests: XCTestCase {
         }
         
         let viewModel: MainViewModel = Container.instance.resolve()
+        let vm: ViewModel = Container.instance.resolve()
+        print(vm.test)
         
         let expectedSource: ModelSource = .remote
         let actualSource = viewModel.getModel().source

@@ -22,10 +22,12 @@ extension DependencyName {
 }
 
 @ModuleBuilder fileprivate func viewModule() -> Module {
+    Dependency.Provide<MainViewModel> { MainViewModelImpl() }.mode(.perInstance)
     Dependency.Provide<ViewModel> { ViewModel() }.mode(.perInstance)
 }
 
 @ModuleBuilder fileprivate func mockViewModule() -> Module {
+    Dependency.Provide<MainViewModel> { MockMainViewModel() }.mode(.perInstance)
     Dependency.Provide<ViewModel> { ViewModel() }.mode(.perInstance)
 }
 
