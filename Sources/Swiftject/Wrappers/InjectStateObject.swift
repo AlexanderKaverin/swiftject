@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 
-@available(iOS 13, *)
+@available(iOS 14, *)
 @propertyWrapper public struct InjectStateObject<T>: DynamicProperty where T: ObservableObject {
  
     private var dependency: T

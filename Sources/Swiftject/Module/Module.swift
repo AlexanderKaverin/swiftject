@@ -7,7 +7,7 @@
 
 import Foundation
 
-@_functionBuilder
+@resultBuilder
 public struct ModuleBuilder {
         
     public static func buildBlock(_ dependencies: ContainerComponent...) -> Module {

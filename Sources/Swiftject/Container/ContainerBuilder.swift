@@ -17,7 +17,7 @@ extension Array: ContainerComponent where Element == Dependency {
     }
 }
 
-@_functionBuilder
+@resultBuilder
 public struct ContainerBuilder {
     
     public static func buildBlock(_ dependencies: ContainerComponent...) -> [Dependency] { dependencies.flatMap({ $0.build() }) }
