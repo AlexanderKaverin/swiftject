@@ -59,9 +59,11 @@ class MainViewModelImpl: MainViewModel {
     
     // field injection
     @Inject private var repository: Repository
+    @InjectStateObject private var viewModel: ViewModel
     
     func getModel() -> Model {
-        repository.getModel()
+        print(viewModel.test)
+        return repository.getModel()
     }
 }
 
