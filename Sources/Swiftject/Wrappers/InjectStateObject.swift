@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-
+#if canImport(SwiftUI)
 @available(iOS 14, *)
 @propertyWrapper public struct InjectStateObject<T>: DynamicProperty where T: ObservableObject {
     
@@ -29,3 +29,4 @@ import SwiftUI
         self.stateObject = StateObject(wrappedValue: dependencyObject)
     }
 }
+#endif

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-
+#if canImport(SwiftUI)
 @available(iOS 14, *)
 @propertyWrapper public struct InjectObserved<T>: DynamicProperty where T: ObservableObject {
     
@@ -27,3 +27,4 @@ import SwiftUI
         self.dependency = Container.instance.resolve()
     }
 }
+#endif
