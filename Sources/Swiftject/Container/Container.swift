@@ -11,7 +11,7 @@ public class Container {
     
     internal static var instance = Container()
     
-    private var objectGraph: [DependencyIdentifier: Dependency] = [:]
+    private var objectGraph = ThreadSafeDictionary<DependencyIdentifier, Dependency>()
     
     internal init() { }
     
